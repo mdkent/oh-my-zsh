@@ -16,8 +16,9 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 local user_color='green'
 test $UID -eq 0 && user_color='red'
 
-PROMPT='%{$fg[$user_color]%}%n%{$fg[green]%}@%m%{$reset_color%} %(?..%{$fg_bold[red]%}exit %?
+PROMPT='%(?..%{$fg_bold[red]%}exit %?
 %{$reset_color%})'\
+'%{$fg[$user_color]%}%n%{$fg[green]%}@%m%{$reset_color%} '\
 '%{$bold_color%}$(git_prompt_status)%{$reset_color%}'\
 '$(git_prompt_info)'\
 '%{$fg[$user_color]%}%~%{$reset_color%}'\
