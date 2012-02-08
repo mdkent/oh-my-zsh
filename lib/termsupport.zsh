@@ -26,8 +26,8 @@ function omz_termsupport_preexec {
   setopt extended_glob
   local CMD=${1[(wr)^(*=*|sudo|ssh|-*)]} #cmd name only, or if this is sudo or ssh, the next cmd
   # Escape these as they cause issues with unexpected shell output
-  local STRIP=${~2:gs/%/%%}
-  local STRIP=${~STRIP:gs/\$/\\$}
+  local STRIP="${~2:gs/%/%%}"
+  local STRIP="${~STRIP:gs/\$/\\$}"
   title "$CMD" "%100>...>$STRIP%<<"
 }
 
